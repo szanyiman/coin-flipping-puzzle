@@ -67,18 +67,22 @@ public class Coins implements Cloneable {
     }
 
     /**
-     * {@return whether the puzzle is solved}
+     * Returns whether the puzzle is solved.
+     *
+     * @return {@code true} if the puzzle is solved, {@code false} otherwise
      */
     public boolean isGoal() {
         return coins.cardinality() == n;
     }
 
     /**
-     * {@return whether the the coins at the positions specified by a
-     * {@code BitSet} can be flipped}
+     * Returns whether the coins at the positions specified by a {@code BitSet}
+     * can be flipped.
      *
      * @param which a {@code BitSet} that specifies the positions of the coins
      *              to flip
+     * @return {@code true} if the coins specified can be flipped,
+     *         {@code false} otherwise
      */
     public boolean canFlip(BitSet which) {
         return which.length() <= n && which.cardinality() == m;
@@ -97,10 +101,12 @@ public class Coins implements Cloneable {
     }
 
     /**
-     * {@return a list of all possible flips for the arguments specified}
+     * Returns a list of all possible flips for the arguments specified. Flips
+     * are represented as {@code BitSet}s.
      *
      * @param n the number of coins
      * @param m the number of coins to flip in a move
+     * @return a list of all possible flips for the arguments specified
      * @throws IllegalArgumentException if {@code n} is less than 1, or {@code m}
      *         is less than 1, or {@code m} is greater than {@code n}
      */
